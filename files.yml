@@ -22,11 +22,9 @@ index_data:
     region: "EU"
 
 base_rate_data:
-  - file_name: "Statista EZB Leitzins Entwicklung.xlsx"
+  - file_name: "EZB Leitzins Entwicklung.csv"
     institution: "EZB"
     region: "EU"
-    excel_sheet_id: 2
-  - file_name: "Statista FED Leitzins Entwicklung.xlsx"
+  - file_name: "FED Leitzins Entwicklung.csv"
     institution: "FED"
     region: "USA"
-    excel_sheet_id: 2
