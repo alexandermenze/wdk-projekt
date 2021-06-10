@@ -20,12 +20,3 @@ index_data:
   - file_name: "Index STOXX50E Entwicklung seit 2007.csv"
     isin: "EU0009658145"
     region: "EU"
-    
-
-base_rate_data:
-  - file_name: "EZB Leitzins Entwicklung.csv"
-    institution: "EZB"
-    region: "EU"
-  - file_name: "FED Leitzins Entwicklung.csv"
-    institution: "FED"
-    region: "USA"
