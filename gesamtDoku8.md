@@ -132,7 +132,7 @@ Für die nbdev-Werkzeuge werden die einzelnen Code-Zellen mit speziellen Kommena
 - `#exports`: Zelle und Ausgabe der Zelle werden angezeigt; Code wird von nbdev in die Moduldatei exportiert
 
 
-```
+```python
 # exports
 def wirdAngezeigt():
     return 'Sie werden exportiert und angezeigt!'
@@ -154,7 +154,7 @@ print('Hi')
 
 
 
-```
+```python
 print("Aufruf der Funktion 'verstecken()':")
 verstecken()
 ```
@@ -171,7 +171,7 @@ verstecken()
 
 - `#sonstiger Kommentar` oder kein Kommentar: Zelle und auch das Ergebnis werden angezeigt
 
-```
+```python
 # dies ist ein Test...
 wirdAngezeigt()
 ```
@@ -183,7 +183,7 @@ wirdAngezeigt()
 
 
 
-```
+```python
 import sys 
 print('Zelle ohne Kommentar')
 sys.getdefaultencoding()
@@ -210,7 +210,7 @@ Umlauttest: öäüÄÜÖß
 
 
 
-```
+```python
 import nb2ltx.klauswert as klw
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -222,14 +222,14 @@ import matplotlib.pyplot as plt
 
 ## Daten laden
 
-```
+```python
 pbx2020 = klw.Klauswert('rawData/KlausurPunkte.xlsx')
 ```
 
 ## Notenliste erzeugen
 Erst die Daten erzeugen und dann ein Histogramm zeichnen.
 
-```
+```python
 #hide_output
 nListe = pbx2020.getNoten()
 print(nListe.head().to_markdown())
@@ -243,7 +243,7 @@ print(nListe.head().to_markdown())
 |  3 | Christian   |    3.7 |
 |  4 | Christopher |    5   |
 
-```
+```python
 notenBuckets = pbx2020.getNotenDefinition()['Note']
 notenBuckets
 ```
@@ -266,7 +266,7 @@ notenBuckets
 
 
 
-```
+```python
 noList = []
 for note in notenBuckets:
     noList.append({'Note': note, 'Anzahl': nListe[nListe['Note'] == note].count()[0]})
@@ -293,7 +293,7 @@ display(Markdown(notenVerteilung.to_markdown()))
 
 ## Graphische Darstellung der Notenverteilung
 
-```
+```python
 fig = plt.figure()
 ax = fig.add_axes([0,0,1,1])
 ax.bar(notenVerteilung['Note'], notenVerteilung['Anzahl'], 0.2)
@@ -315,7 +315,7 @@ fig.get_size_inches()
 
 Es geht auch etwas kleiner:
 
-```
+```python
 fig = plt.figure(figsize=(4, 2.67), dpi=120)
 ax = fig.add_axes([0,0,1,1])
 ax.bar(notenVerteilung['Note'], notenVerteilung['Anzahl'], 0.2)
@@ -350,7 +350,7 @@ fig.get_size_inches()*fig.dpi
 
 ## Module einbinden
 
-```
+```python
 # exports
 import pandas as pd
 import yaml
@@ -361,7 +361,7 @@ import yaml
 
 ### Standard Konfiguration
 
-```
+```python
 # exports
 stdConfig = '''headerPC: 4
 pointCols: "A:L"
@@ -372,12 +372,12 @@ mxPointCols:  "A:L"
 '''
 ```
 
-```
+```python
 pbx2020 = Klauswert('rawData/KlausurPunkte.xlsx')
 
 ```
 
-```
+```python
 my_show_doc(Klauswert)
 ```
 
@@ -393,7 +393,7 @@ config['pointCols'] stehen die Punkte für die jeweiligen Aufgaben. In den Spalt
 config['markCols'] ist die Notenverteilung ersichtlich
 
 
-```
+```python
 pbx2020 = Klauswert('rawData/KlausurPunkte.xlsx')
 print(pbx2020.getConfig()['headerMC'])
 ```
@@ -403,7 +403,7 @@ print(pbx2020.getConfig()['headerMC'])
 
 ### Die Funktionen
 
-```
+```python
 my_show_doc(Klauswert.getAllData)
 ```
 
@@ -415,7 +415,7 @@ my_show_doc(Klauswert.getAllData)
 Aufgabe: gesamten Dataframe zurück geben.
 
 
-```
+```python
 display(Markdown(pbx2020.getAllData().head().to_markdown()))
 ```
 
@@ -439,11 +439,11 @@ Die folgende Tabelle ist eine Kopie der Codeausgabe der vorherigen Zelle:
 |  3 | Christian   |  3.5 |  2.5 |    1 |  6.5 | 17   |  2.5 |    5 |  5   |  4   |   6   |   4   |   57   |
 |  4 | Christopher |  3.5 |  0.5 |    0 |  4   |  7.5 |  0   |    0 |  0   |  0   |   0   |   0   |   15.5 |
 
-```
+```python
 dfKerg=pd.read_excel('rawData/KlausurPunkte.xlsx', header=4, usecols='A:L')
 ```
 
-```
+```python
 my_dispMarkdown(dfKerg.head())
 ```
 
@@ -457,7 +457,7 @@ my_dispMarkdown(dfKerg.head())
 |  4 | Christopher |  3.5 |  0.5 |    0 |  4   |  7.5 |  0   |    0 |  0   |  0   |   0   |   0   |
 
 
-```
+```python
 my_show_doc(Klauswert.getDurchgefallen)
 ```
 
@@ -470,7 +470,7 @@ Liefert eine Liste mit den Namen der Teilnehmer, die die Klausur nicht bestanden
 sowie deren Zielerreichungswert.
 
 
-```
+```python
 my_dispMarkdown(pbx2020.getDurchgefallen().head())
 ```
 

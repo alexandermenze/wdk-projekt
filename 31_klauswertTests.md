@@ -2,7 +2,7 @@
 
 
 
-```
+```python
 import nb2ltx.klauswert as klw
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -14,14 +14,14 @@ import matplotlib.pyplot as plt
 
 ## Daten laden
 
-```
+```python
 pbx2020 = klw.Klauswert('rawData/KlausurPunkte.xlsx')
 ```
 
 ## Notenliste erzeugen
 Erst die Daten erzeugen und dann ein Histogramm zeichnen.
 
-```
+```python
 #hide_output
 nListe = pbx2020.getNoten()
 print(nListe.head().to_markdown())
@@ -35,7 +35,7 @@ print(nListe.head().to_markdown())
 |  3 | Christian   |    3.7 |
 |  4 | Christopher |    5   |
 
-```
+```python
 notenBuckets = pbx2020.getNotenDefinition()['Note']
 notenBuckets
 ```
@@ -58,7 +58,7 @@ notenBuckets
 
 
 
-```
+```python
 noList = []
 for note in notenBuckets:
     noList.append({'Note': note, 'Anzahl': nListe[nListe['Note'] == note].count()[0]})
@@ -85,7 +85,7 @@ display(Markdown(notenVerteilung.to_markdown()))
 
 ## Graphische Darstellung der Notenverteilung
 
-```
+```python
 fig = plt.figure()
 ax = fig.add_axes([0,0,1,1])
 ax.bar(notenVerteilung['Note'], notenVerteilung['Anzahl'], 0.2)
@@ -107,7 +107,7 @@ fig.get_size_inches()
 
 Es geht auch etwas kleiner:
 
-```
+```python
 fig = plt.figure(figsize=(4, 2.67), dpi=120)
 ax = fig.add_axes([0,0,1,1])
 ax.bar(notenVerteilung['Note'], notenVerteilung['Anzahl'], 0.2)

@@ -132,7 +132,7 @@ Für die nbdev-Werkzeuge werden die einzelnen Code-Zellen mit speziellen Kommenar
 - `#exports`: Zelle und Ausgabe der Zelle werden angezeigt; Code wird von nbdev in die Moduldatei exportiert
 
 
-```
+```python
 # exports
 def wirdAngezeigt():
     return 'Sie werden exportiert und angezeigt!'
@@ -154,7 +154,7 @@ print('Hi')
 
 
 
-```
+```python
 print("Aufruf der Funktion 'verstecken()':")
 verstecken()
 ```
@@ -171,7 +171,7 @@ verstecken()
 
 - `#sonstiger Kommentar` oder kein Kommentar: Zelle und auch das Ergebnis werden angezeigt
 
-```
+```python
 # dies ist ein Test...
 wirdAngezeigt()
 ```
@@ -183,7 +183,7 @@ wirdAngezeigt()
 
 
 
-```
+```python
 import sys 
 print('Zelle ohne Kommentar')
 sys.getdefaultencoding()

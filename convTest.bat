@@ -2,6 +2,7 @@ rem @echo off
 nbdev_nb2md.exe 20_Examples.ipynb
 nbdev_nb2md.exe 30_CodeExample.ipynb
 nbdev_nb2md.exe 31_klauswertTests.ipynb
+nbdev_nb2md.exe StockDatabase.ipynb
 
 type 20_Examples.md > gesamtDoku.md
 type 31_klauswertTests.md >> gesamtDoku.md

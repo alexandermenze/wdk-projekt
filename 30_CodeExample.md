@@ -4,7 +4,7 @@
 
 ## Module einbinden
 
-```
+```python
 # exports
 import pandas as pd
 import yaml
@@ -15,7 +15,7 @@ import yaml
 
 ### Standard Konfiguration
 
-```
+```python
 # exports
 stdConfig = '''headerPC: 4
 pointCols: "A:L"
@@ -26,12 +26,12 @@ mxPointCols:  "A:L"
 '''
 ```
 
-```
+```python
 pbx2020 = Klauswert('rawData/KlausurPunkte.xlsx')
 
 ```
 
-```
+```python
 my_show_doc(Klauswert)
 ```
 
@@ -47,7 +47,7 @@ config['pointCols'] stehen die Punkte für die jeweiligen Aufgaben. In den Spalte
 config['markCols'] ist die Notenverteilung ersichtlich
 
 
-```
+```python
 pbx2020 = Klauswert('rawData/KlausurPunkte.xlsx')
 print(pbx2020.getConfig()['headerMC'])
 ```
@@ -57,7 +57,7 @@ print(pbx2020.getConfig()['headerMC'])
 
 ### Die Funktionen
 
-```
+```python
 my_show_doc(Klauswert.getAllData)
 ```
 
@@ -69,7 +69,7 @@ my_show_doc(Klauswert.getAllData)
 Aufgabe: gesamten Dataframe zurück geben.
 
 
-```
+```python
 display(Markdown(pbx2020.getAllData().head().to_markdown()))
 ```
 
@@ -93,11 +93,11 @@ Die folgende Tabelle ist eine Kopie der Codeausgabe der vorherigen Zelle:
 |  3 | Christian   |  3.5 |  2.5 |    1 |  6.5 | 17   |  2.5 |    5 |  5   |  4   |   6   |   4   |   57   |
 |  4 | Christopher |  3.5 |  0.5 |    0 |  4   |  7.5 |  0   |    0 |  0   |  0   |   0   |   0   |   15.5 |
 
-```
+```python
 dfKerg=pd.read_excel('rawData/KlausurPunkte.xlsx', header=4, usecols='A:L')
 ```
 
-```
+```python
 my_dispMarkdown(dfKerg.head())
 ```
 
@@ -111,7 +111,7 @@ my_dispMarkdown(dfKerg.head())
 |  4 | Christopher |  3.5 |  0.5 |    0 |  4   |  7.5 |  0   |    0 |  0   |  0   |   0   |   0   |
 
 
-```
+```python
 my_show_doc(Klauswert.getDurchgefallen)
 ```
 
@@ -124,7 +124,7 @@ Liefert eine Liste mit den Namen der Teilnehmer, die die Klausur nicht bestanden
 sowie deren Zielerreichungswert.
 
 
-```
+```python
 my_dispMarkdown(pbx2020.getDurchgefallen().head())
 ```
 
